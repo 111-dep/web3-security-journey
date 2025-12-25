@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# ================= 配置区域 =================
+# 1. Graftcp 安装目录（改为你安装的实际目录）
+GRAFTCP_DIR="/home/dandan/graftcp"
+
+# 2. 代理地址（改为自己的代理地址，我这是本地的）
+PROXY_URL="172.18.128.1:7890"
+# ===========================================
+
+# 调试日志
+LOG_FILE="/tmp/graftcp_wrapper.log"
+echo "[$(date)] Starting wrapper for $@" >> "$LOG_FILE"
+
+# 检查 graftcp-local 服务是否在运行
+if ! pgrep -f "$GRAFTCP_DIR/local/graftcp-local" > /dev/null; then
+echo "Starting graftcp-local daemon..." >> "$LOG_FILE"
+# 后台启动，将日志丢入黑洞防止阻塞
+nohup "$GRAFTCP_DIR/local/graftcp-local" -socks5="$PROXY_URL" > /dev/null 2>&1 &
+sleep 0.5
+fi
+# 1. 强制使用系统 DNS (解决解析问题)
+export GODEBUG=netdns=cgo
+
+# 2. 强制关闭 HTTP/2 (解决 EOF 问题)
+# Go 的 HTTP/2 客户端在代理环境下非常敏感，强制用 HTTP/1.1 通常能解决 EOF
+export GODEBUG=$GODEBUG,http2client=0
+# 使用 graftcp 启动真正的程序
+# "$0.bak" 是原程序的备份
+exec "$GRAFTCP_DIR/graftcp" "$0.bak" "$@"
