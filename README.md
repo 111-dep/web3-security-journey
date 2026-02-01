@@ -10,8 +10,8 @@ Still very much learning — this repo is where I keep my findings from contests
 **Sherlock Audit Contest**  
 *stNXM*  
 - Identified and confirmed 2 issues (1 High, 1 Medium)  
-  - High: Owner can zero out reported AUM by removing staking IDs, then mint massive shares at near-zero price and drain vault 
-  - Medium: Oracle startup window enforces overly strict price cap causing denial-of-service during slight early appreciation  
+  - High: [Owner can zero out reported AUM by removing staking IDs, then mint massive shares at near-zero price and drain vault](report/stNXM_by_EaseDeFi/H1.md)
+  - Medium: [Oracle startup window enforces overly strict price cap causing denial-of-service during slight early appreciation](report/stNXM_by_EaseDeFi/M1.md)  
 
 **Sherlock Audit Contest**  
 *Monolith* – December 2025  
