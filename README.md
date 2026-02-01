@@ -3,37 +3,38 @@
 
 ## 👨‍💻 About Me
 
-Hi, I'm a Security Researcher specializing in **Rust** and **Solana DeFi logic**. 
-My focus is on identifying architectural flaws, accounting mismatches, and complex state dependency bugs that automated tools often miss.
-
-*   **Role:** Independent Security Researcher / Auditor
-*   **Focus:** Rust, Solana (Anchor), DeFi Logic (Lending, AMM, Derivatives)
-*   **Track Record:** 6 Contests | **3 High** | **3 Medium** (Verified findings)
+Hi, I'm a Security Researcher Beginer.
 
 ---
+### Competitive Auditing Experience  
 
-## 🏆 Key Findings (Selected)
+**Sherlock Audit Contest**  
+*stNXM*  
+- Identified and confirmed 2 issues (1 High, 1 Medium)  
+  - High: Owner can zero out reported AUM by removing staking IDs, then mint massive shares at near-zero price and drain vault 
+  - Medium: Oracle startup window enforces overly strict price cap causing denial-of-service during slight early appreciation  
 
-Here are the detailed write-ups and reproduction scripts for my most significant findings.
+**Sherlock Audit Contest**  
+*Monolith* – December 2025  
+- Identified and confirmed 1 High-severity issue  
+  - High: Chainlink oracle stale price drops to 1 wei without disabling redemption, allowing malicious draining of protocol funds  
 
-| Severity | Protocol | Vulnerability Type | Description | Report Link |
-| :--- | :--- | :--- | :--- | :--- |
-| **HIGH** | [Reflector V3] | Logic Error | Missing State Update in Refund LogicCritical Authorization Bypass: Anyone Can Manipulate Oracle Invocation Costs, Disrupting the Entire Economic Model of ReflectorBeam. | [Read Report](./reports/high/project-a-logic-error.md) |
+**Code4rena Audit Contest**  
+*SukukFi*  
+- Identified and confirmed 2 issues (1 High, 1 Medium)  
+  - High: Critical: Arbitrary theft of user funds in `WERC7575Vault` due to missing allowance check on `redeem/withdraw`  
+  - Medium: DoS via Dust Transfer Prevents Vault Unregistration  
 
+**Code4rena Audit Contest**  
+*Swafe* – November 2025  
+- Identified and confirmed 2 Medium-severity issues  
+  - Medium: Lack of replay protection for guardian shares allows malicious overwrite and DoS
+  - Medium: Malicious thrashing of `rec.pke` can permanently block account recovery  
 
-> *Note: All findings listed above have been confirmed and fixed by the protocols.*
-
----
-
-
----
-
-## 📝 Research & Methodology
-
-My personal audit checklists and research notes on Solana security patterns.
-
-*   [Solana Common Pitfalls Checklist](./research/solana_audit_checklist.md) - My mental model for reviewing Anchor programs.
-*   [Rust Precision Handling](./research/rust_math_notes.md) - Notes on `u64` vs `u128` safe math.
+**Code4rena Audit Contest**  
+*Reflector V3*  
+- Identified and confirmed 1 High-severity issue  
+  - High: Critical Authorization Bypass: Anyone Can Manipulate Oracle Invocation Costs, Disrupting the Entire Economic Model of ReflectorBeam
 
 ---
 
