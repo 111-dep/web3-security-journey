@@ -1,9 +1,9 @@
 # Web3 Security Researcher 
 ## 👨‍💻 About Me
 
-Just a regular guy trying to make it in Web3 security.  
-Biology major in university, later worked on Java backend and bioinformatics. After a couple of career shifts, started self-studying smart contract auditing in October 2025.  
-Still very much learning — this repo is where I keep my findings from contests. Feedback welcome.
+> Just a regular guy trying to make it in Web3 security.  
+> Biology major in university, later worked on Java backend and bioinformatics. After a couple of career shifts, started self-studying smart contract auditing in October 2025.  
+> Still very much learning — this repo is where I keep my findings from contests. Feedback welcome.
 ---
 ### Competitive Auditing Experience  
 
