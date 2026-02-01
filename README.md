@@ -34,7 +34,7 @@ Hi, I'm a Security Researcher Beginer.
 **Code4rena Audit Contest**  
 *Reflector V3*  
 - Identified and confirmed 1 High-severity issue  
-  - High: Critical Authorization Bypass: Anyone Can Manipulate Oracle Invocation Costs, Disrupting the Entire Economic Model of ReflectorBeam
+  - High: [Critical Authorization Bypass: Anyone Can Manipulate Oracle Invocation Costs, Disrupting the Entire Economic Model of ReflectorBeam](https://code4rena.com/audits/2025-11-sukukfi/submissions?uid=36G42wMVPdT)
 
 ---
 
